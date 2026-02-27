@@ -2,7 +2,7 @@
 
 Production-ready personal portfolio built with **React + TypeScript**, showcasing my projects, certifications, and full-stack development skills.
 
-🔗 **Live Website:** https://your-portfolio-link  
+🔗 **Live Website:** https://portfolio-tau-lilac-98.vercel.app/ 
 🔗 **Online Resume:** https://resume-iota-rust.vercel.app/  
 🔗 **GitHub:** https://github.com/codewithabhi2003  
 
