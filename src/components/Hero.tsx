@@ -32,7 +32,7 @@ const Hero = () => {
           <FadeIn delay={400}>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
-                href="/resum1.pdf"
+                href="/Abhishek – Associate Software Engineer.pdf"
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-all duration-200 hover:scale-105"
               >
