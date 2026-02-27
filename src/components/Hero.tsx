@@ -44,7 +44,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary text-primary font-medium hover:bg-primary/10 transition-all duration-200 hover:scale-105"
               >
-                <ExternalLink size={18} /> Online Resume
+                <ExternalLink size={18} />Resume
               </a>
             </div>
           </FadeIn>
