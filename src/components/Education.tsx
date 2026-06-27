@@ -1,18 +1,7 @@
 import { GraduationCap } from "lucide-react";
 import FadeIn from "./FadeIn";
 
-const education = [
-  {
-    degree: "BSc IT",
-    school: "L.S. Raheja College, University of Mumbai",
-    period: "2023 – 2026 (Pursuing)",
-  },
-  {
-    degree: "HSC",
-    school: "Durga Devi Saraf Junior College",
-    period: "Completed in 2020",
-  },
-];
+const education = [ { degree: "Bachelor of Science in Information Technology (BSc IT)", school: "L.S. Raheja College, University of Mumbai", period: "2023 – 2026 | CGPA: 8.33", }, { degree: "Diploma in Pharmacy (D.Pharm)", school: "New Prestige College of Pharmacy", period: "2020 – 2023", }, { degree: "Higher Secondary Certificate (HSC)", school: "Durga Devi Saraf Junior College", period: "2020", }, ];
 
 const softSkills = ["Problem Solving", "Team Collaboration", "Adaptability", "Quick Learning", "Communication"];
 
