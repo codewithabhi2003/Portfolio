@@ -1,29 +1,43 @@
+import {
+  Network,
+  DatabaseZap,
+  Radio,
+  Sparkles,
+  ShieldCheck,
+  Rocket,
+} from "lucide-react";
 import FadeIn from "./FadeIn";
 
-const skillCategories = [
+const expertise = [
   {
-    title: "Languages",
-    skills: ["JavaScript", "Python", "HTML", "CSS", "Java (Basics)"],
+    icon: Network,
+    title: "API Development",
+    desc: "RESTful APIs and MVC architecture — 15+ endpoints designed, documented, and tested in Postman across roles.",
   },
   {
-    title: "Frameworks",
-    skills: ["React.js", "Node.js", "Express.js"],
+    icon: DatabaseZap,
+    title: "Database Engineering",
+    desc: "MongoDB with Mongoose — aggregation pipelines, indexing, and atomic operations to avoid inconsistent states.",
   },
   {
-    title: "Databases",
-    skills: ["MongoDB", "SQL (Basics)"],
+    icon: Radio,
+    title: "Real-time Systems",
+    desc: "Socket.io with JWT handshake middleware — live chat, negotiation flows, and state that stays in sync.",
   },
   {
-    title: "Cloud & DevOps",
-    skills: ["AWS", "Docker", "Vercel", "Netlify", "Render"],
+    icon: Sparkles,
+    title: "AI Integrations",
+    desc: "Groq (LLaMA 3.1) and Gemini Vision, chained with fallback logic so a single quota limit never breaks the app.",
   },
   {
-    title: "Security",
-    skills: ["JWT Authentication", "RBAC", "REST APIs"],
+    icon: ShieldCheck,
+    title: "Auth & Security",
+    desc: "JWT, RBAC, bcrypt, and HMAC signature verification on every checkout and protected route.",
   },
   {
-    title: "Tools",
-    skills: ["Git", "GitHub", "Postman", "VS Code", "Trello"],
+    icon: Rocket,
+    title: "Deployment & DevOps",
+    desc: "GitHub Actions CI pushing to Vercel and Render, with keep-alive workflows so cold starts don't hurt UX.",
   },
 ];
 
@@ -31,25 +45,27 @@ const Skills = () => {
   return (
     <section id="skills" className="section-container">
       <FadeIn>
-        <h2 className="section-heading">Technical Skills</h2>
+        <span className="eyebrow">Core expertise</span>
+        <h2 className="section-heading">What I'm Good At</h2>
+        <p className="section-sub">
+          Six areas I keep coming back to on every project, from ReWear's
+          negotiation engine to Job Portal's role-based dashboards.
+        </p>
       </FadeIn>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {skillCategories.map((cat, i) => (
-          <FadeIn key={cat.title} delay={i * 80}>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {expertise.map((item, i) => (
+          <FadeIn key={item.title} delay={i * 80}>
             <div className="glass-card h-full">
-              <h3 className="font-mono text-primary text-sm font-semibold mb-4">
-                {cat.title}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {cat.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-sm px-3 py-1.5 rounded-md bg-secondary text-foreground"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-4">
+                <item.icon size={18} />
               </div>
+              <h3 className="font-display font-semibold mb-2">
+                {item.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {item.desc}
+              </p>
             </div>
           </FadeIn>
         ))}
