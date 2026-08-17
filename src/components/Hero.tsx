@@ -59,12 +59,12 @@ const Hero = () => {
                 <Mail size={16} /> Let's talk
               </a>
               <a
-                href="/Abhishek%20%E2%80%93%20Associate%20Software%20Engineer.pdf"
-                download
-                className="btn-outline"
-              >
-                <Download size={16} /> Resume
-              </a>
+  href="/Abhishek%20Vishwakarma%20%E2%80%93%20Full%20Stack%20Developer.pdf"
+  download="Abhishek Vishwakarma – Full Stack Developer.pdf"
+  className="btn-outline"
+>
+  <Download size={16} /> Resume
+</a>
             </div>
           </FadeIn>
 
