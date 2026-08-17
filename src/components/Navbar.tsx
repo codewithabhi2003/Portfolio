@@ -83,8 +83,8 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <a
-            href="/Abhishek%20%E2%80%93%20Associate%20Software%20Engineer.pdf"
-            download
+            href="/Abhishek%20Vishwakarma%20%E2%80%93%20Full%20Stack%20Developer.pdf"
+            download="Abhishek Vishwakarma – Full Stack Developer.pdf"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-sm text-foreground hover:border-primary/50 hover:text-primary transition-colors duration-200"
           >
             <Download size={15} /> Resume
@@ -118,8 +118,8 @@ const Navbar = () => {
             ))}
             <li className="mt-3">
               <a
-                href="/Abhishek%20%E2%80%93%20Associate%20Software%20Engineer.pdf"
-                download
+                href="/Abhishek%20Vishwakarma%20%E2%80%93%20Full%20Stack%20Developer.pdf"
+                download="Abhishek Vishwakarma – Full Stack Developer.pdf"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium"
               >
                 <Download size={15} /> Resume
