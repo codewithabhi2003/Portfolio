@@ -1,115 +1,348 @@
-import { useRef } from "react";
 import FadeIn from "./FadeIn";
 import CodeBlock, { type CodeLine } from "./CodeBlock";
-import profilePhoto from "@/assets/profile-photo.png";
 
 const ABOUT_JSON: CodeLine[] = [
-  { indent: 0, content: <>{"{"}</> },
-  { indent: 1, content: <><span className="tok-key">"name"</span><span className="tok-punct">:</span> <span className="tok-string">"Abhishek Vishwakarma"</span>,</> },
-  { indent: 1, content: <><span className="tok-key">"location"</span><span className="tok-punct">:</span> <span className="tok-string">"Mumbai, India"</span>,</> },
-  { indent: 1, content: <><span className="tok-key">"education"</span><span className="tok-punct">:</span> <span className="tok-string">"BSc Information Technology"</span>,</> },
-  { indent: 1, content: <><span className="tok-key">"college"</span><span className="tok-punct">:</span> <span className="tok-string">"L.S. Raheja College, Univ. of Mumbai"</span>,</> },
-  { indent: 1, content: <><span className="tok-key">"cgpa"</span><span className="tok-punct">:</span> <span className="tok-string">"8.33 / 10"</span>,</> },
-  { indent: 1, content: <><span className="tok-key">"role"</span><span className="tok-punct">:</span> <span className="tok-string">"Full-Stack Developer (MERN)"</span>,</> },
+  {
+    indent: 0,
+    content: <>{"{"}</>,
+  },
+  {
+    indent: 1,
+    content: (
+      <>
+        <span className="tok-key">"name"</span>
+        <span className="tok-punct">:</span>{" "}
+        <span className="tok-string">
+          "Abhishek Vishwakarma"
+        </span>
+        ,
+      </>
+    ),
+  },
+  {
+    indent: 1,
+    content: (
+      <>
+        <span className="tok-key">"location"</span>
+        <span className="tok-punct">:</span>{" "}
+        <span className="tok-string">
+          "Mumbai, India"
+        </span>
+        ,
+      </>
+    ),
+  },
+  {
+    indent: 1,
+    content: (
+      <>
+        <span className="tok-key">"education"</span>
+        <span className="tok-punct">:</span>{" "}
+        <span className="tok-string">
+          "BSc Information Technology"
+        </span>
+        ,
+      </>
+    ),
+  },
+  {
+    indent: 1,
+    content: (
+      <>
+        <span className="tok-key">"college"</span>
+        <span className="tok-punct">:</span>{" "}
+        <span className="tok-string">
+          "L.S. Raheja College, Univ. of Mumbai"
+        </span>
+        ,
+      </>
+    ),
+  },
+  {
+    indent: 1,
+    content: (
+      <>
+        <span className="tok-key">"cgpa"</span>
+        <span className="tok-punct">:</span>{" "}
+        <span className="tok-string">
+          "8.33 / 10"
+        </span>
+        ,
+      </>
+    ),
+  },
+  {
+    indent: 1,
+    content: (
+      <>
+        <span className="tok-key">"role"</span>
+        <span className="tok-punct">:</span>{" "}
+        <span className="tok-string">
+          "Full-Stack Developer (MERN)"
+        </span>
+        ,
+      </>
+    ),
+  },
+  {
+    indent: 1,
+    content: (
+      <>
+        <span className="tok-key">"focus"</span>
+        <span className="tok-punct">:</span>{" "}
+        <span className="tok-string">
+          "Production-ready applications"
+        </span>
+        ,
+      </>
+    ),
+  },
   {
     indent: 1,
     content: (
       <>
         <span className="tok-key">"status"</span>
         <span className="tok-punct">:</span>{" "}
-        <span className="tok-string text-primary">"open_to_opportunities"</span>
+        <span className="tok-string text-primary">
+          "open_to_opportunities"
+        </span>
+
         <span className="inline-flex relative ml-2 -translate-y-px">
           <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-primary opacity-60" />
+
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
         </span>
       </>
     ),
   },
-  { indent: 0, content: <>{"}"}</> },
+  {
+    indent: 0,
+    content: <>{"}"}</>,
+  },
 ];
 
 const About = () => {
-  const photoRef = useRef<HTMLDivElement>(null);
-
-  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = photoRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.transform = `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale(1.02)`;
-  };
-
-  const handleLeave = () => {
-    const el = photoRef.current;
-    if (!el) return;
-    el.style.transform = `perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)`;
-  };
-
   return (
-    <section id="about" className="section-container">
+    <section
+      id="about"
+      className="
+        section-container
+        w-full
+        min-w-0
+        overflow-hidden
+      "
+    >
+      {/* =========================================
+          HEADER
+      ========================================== */}
+
       <FadeIn>
-        <span className="eyebrow">Get to know me</span>
-        <h2 className="section-heading">About Me</h2>
+        <div className="w-full min-w-0">
+          <span className="eyebrow">
+            Get to know me
+          </span>
+
+          <h2 className="section-heading">
+            About Me
+          </h2>
+        </div>
       </FadeIn>
 
-      <div className="grid md:grid-cols-[280px_1fr] gap-12 items-start mt-4 min-w-0">
-        <FadeIn delay={100} className="min-w-0">
-          <div
-            ref={photoRef}
-            onMouseMove={handleMove}
-            onMouseLeave={handleLeave}
-            className="relative w-full max-w-[260px] mx-auto md:mx-0 aspect-[4/5] rounded-2xl overflow-hidden border border-border transition-transform duration-300 ease-out"
-            style={{ transformStyle: "preserve-3d" }}
-          >
-            <img
-              src={profilePhoto}
-              alt="Abhishek Vishwakarma"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-            <div className="absolute inset-0 ring-1 ring-inset ring-primary/20 rounded-2xl" />
-          </div>
-        </FadeIn>
+      {/* =========================================
+          MAIN CONTENT
+      ========================================== */}
 
-        <div className="min-w-0">
-          <FadeIn delay={160}>
-            <p className="text-foreground leading-relaxed mb-4">
+      <div
+        className="
+          mt-6
+          sm:mt-8
+
+          grid
+          grid-cols-1
+          lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]
+
+          gap-8
+          sm:gap-10
+          lg:gap-16
+
+          items-start
+
+          w-full
+          min-w-0
+        "
+      >
+        {/* =====================================
+            LEFT — ABOUT TEXT
+        ====================================== */}
+
+        <div className="w-full min-w-0">
+          <FadeIn delay={100}>
+            <p
+              className="
+                text-base
+                sm:text-lg
+                text-foreground
+                leading-7
+                sm:leading-relaxed
+                mb-5
+                max-w-2xl
+              "
+            >
               I'm a{" "}
               <span className="text-primary font-medium">
                 Full-Stack Developer
               </span>{" "}
-              and BSc IT student who likes building things that actually run
-              in production, not just in a portfolio. Frontend to database,
-              I own the whole path.
-            </p>
-          </FadeIn>
-          <FadeIn delay={220}>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              I enjoy building complete web applications — from frontend
-              interfaces to backend APIs, databases, authentication,
-              real-time communication, AI integrations, and cloud
-              deployment. My experience comes from hands-on development of
-              two live, deployed applications using the MERN stack.
-            </p>
-          </FadeIn>
-          <FadeIn delay={280}>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Right now I'm looking for a Full-Stack Developer role where I
-              can ship production-ready features, take part in real code
-              reviews, and grow inside a strong engineering team.
+              who enjoys building applications that
+              actually work beyond the frontend.
             </p>
           </FadeIn>
 
-          <FadeIn delay={340} className="min-w-0">
-            <CodeBlock filename="about.json" lines={ABOUT_JSON} />
+          <FadeIn delay={160}>
+            <p
+              className="
+                text-sm
+                sm:text-base
+                text-muted-foreground
+                leading-6
+                sm:leading-7
+                mb-5
+                max-w-2xl
+              "
+            >
+              I work across the entire development stack —
+              designing interfaces, building REST APIs,
+              working with databases, implementing
+              authentication, real-time communication,
+              AI integrations, and deploying applications
+              to the cloud.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={220}>
+            <p
+              className="
+                text-sm
+                sm:text-base
+                text-muted-foreground
+                leading-6
+                sm:leading-7
+                mb-7
+                sm:mb-8
+                max-w-2xl
+              "
+            >
+              Most of my experience comes from building
+              real projects with the{" "}
+              <span className="text-foreground font-medium">
+                MERN stack
+              </span>
+              . I care about clean UI, maintainable code,
+              reliable backend systems, and turning ideas
+              into products people can actually use.
+            </p>
+          </FadeIn>
+
+          {/* =====================================
+              AVAILABILITY
+          ====================================== */}
+
+          <FadeIn delay={280}>
+            <div
+              className="
+                flex
+                items-center
+                gap-3
+                min-w-0
+              "
+            >
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span
+                  className="
+                    animate-ping
+                    absolute
+                    inline-flex
+                    h-full
+                    w-full
+                    rounded-full
+                    bg-primary
+                    opacity-60
+                  "
+                />
+
+                <span
+                  className="
+                    relative
+                    inline-flex
+                    rounded-full
+                    h-2.5
+                    w-2.5
+                    bg-primary
+                  "
+                />
+              </span>
+
+              <span
+                className="
+                  text-xs
+                  sm:text-sm
+                  text-muted-foreground
+                  leading-5
+                "
+              >
+                Currently open to Full-Stack opportunities
+              </span>
+            </div>
           </FadeIn>
         </div>
+
+        {/* =====================================
+            RIGHT — CODE PROFILE
+        ====================================== */}
+
+        <FadeIn
+          delay={180}
+          className="
+            w-full
+            min-w-0
+            max-w-full
+          "
+        >
+          <div className="relative w-full min-w-0 max-w-full">
+            {/* Subtle glow */}
+
+            <div
+              className="
+                absolute
+                -inset-4
+                sm:-inset-6
+                rounded-full
+                bg-primary/[0.035]
+                blur-3xl
+                pointer-events-none
+              "
+            />
+
+            {/* Code wrapper */}
+
+            <div
+              className="
+                relative
+                w-full
+                min-w-0
+                max-w-full
+                overflow-hidden
+              "
+            >
+              <CodeBlock
+                filename="about.json"
+                lines={ABOUT_JSON}
+              />
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
 };
 
 export default About;
-
