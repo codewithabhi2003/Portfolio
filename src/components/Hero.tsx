@@ -91,8 +91,8 @@ const Hero = () => {
               </a>
 
               <a
-                href="/Abhishek%20Vishwakarma%20%E2%80%93%20Full%20Stack%20Developer.pdf"
-                download="Abhishek Vishwakarma – Full Stack Developer.pdf"
+                href="/Abhishek_Vishwakarma_Full_Stack_Developer.pdf"
+                download="Abhishek_Vishwakarma_Full_Stack_Developer.pdf"
                 className="btn-outline"
               >
                 <Download size={16} />
